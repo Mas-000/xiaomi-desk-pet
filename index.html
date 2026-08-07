@@ -208,9 +208,26 @@ body {
   #settings.hidden { transform: translateY(calc(100% + 32px)); }
 }
 
+/* ---------- 展示版說明橫幅 ---------- */
+body { margin: 0; display: flex; flex-direction: column; height: 100dvh; }
+#app { height: auto; flex: 1; min-height: 0; }
+#modeBanner {
+  flex: none; background: #eef6fd; border-bottom: 2px solid #dcebf6;
+  color: #3d5a72; font-size: 13px; line-height: 1.6;
+  padding: 9px 16px; text-align: center;
+}
+#modeBanner b { color: #1f4a6d; }
+#modeBanner a { color: #2b7bc0; font-weight: 600; text-decoration: none; }
+#modeBanner a:hover { text-decoration: underline; }
+@media (max-width: 640px) { #modeBanner { font-size: 12px; padding: 8px 12px; } }
+
 </style>
 </head>
 <body>
+<div id="modeBanner">
+  展示版說明：未填入 API 金鑰時為<b>離線降級模式</b>，回覆由本地規則引擎產生；填入 Gemini 金鑰後切換為 <b>LLM 對話模式</b>。兩種模式的表情、待機與對嘴動畫完全相同。
+  <a href="https://github.com/Mas-000/xiaomi-desk-pet#readme" target="_blank" rel="noopener">技術說明 →</a>
+</div>
 <div id="app">
   <div id="stage">
     <div id="statusChip">🙂 平靜</div>
